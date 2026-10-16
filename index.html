@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Kal Drop</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-text">Kal<span class="logo-accent">Drop</span></span>
+      </div>
+      <div class="header-right">
+        <div class="balance-pill">
+          <span class="balance-icon">₽</span>
+          <span id="headerBalance">0</span>
+        </div>
+        <button class="btn-deposit" id="depositBtn">Пополнить</button>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <button class="nav-item active" data-tab="home">Игры</button>
+      <button class="nav-item" data-tab="cases">Кейсы</button>
+      <button class="nav-item" data-tab="earn">Заработок</button>
+      <button class="nav-item" data-tab="bonus">Бонусы</button>
+      <button class="nav-item" data-tab="vip">VIP</button>
+    </nav>
+
+    <!-- ==================== HOME / GAMES ==================== -->
+    <section class="tab-content active" id="tab-home">
+
+      <!-- Promo Banner -->
+      <div class="promo-banner">
+        <div class="promo-badge">Акция дня</div>
+        <h2 class="promo-title">Подарок<br>за пополнение</h2>
+        <p class="promo-desc">Подарок Telegram каждый день,<br>подборка обновляется в полночь</p>
+        <button class="btn-primary">Пополнить →</button>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">до 9%</div>
+          <div class="stat-label">Кэшбек по пятницам</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">до 1 500 ₽</div>
+          <div class="stat-label">за друга</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">до 50%</div>
+          <div class="stat-label">Рейкбек в VIP</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Честная</div>
+          <div class="stat-label">игра</div>
+        </div>
+      </div>
+
+      <!-- Staking Section -->
+      <div class="section-title">Стейкинг подарков</div>
+      <div class="stake-card">
+        <div class="stake-row">
+          <div>
+            <div class="stake-label">Баланс</div>
+            <div class="stake-value" id="balanceValue">0</div>
+          </div>
+          <div>
+            <div class="stake-label">В стейкинге</div>
+            <div class="stake-value accent" id="stakedValue">0</div>
+          </div>
+        </div>
+        <div class="stake-actions">
+          <button class="btn-stake" id="stakeBtn">🔒 Застейкать</button>
+          <button class="btn-unstake" id="unstakeBtn">🔓 Забрать</button>
+        </div>
+      </div>
+
+      <!-- Games -->
+      <div class="section-title">Игры</div>
+      <div class="games-grid">
+        <div class="game-card">
+          <div class="game-players">🟢 43 играют</div>
+          <div class="game-emoji">🚗🐄</div>
+          <div class="game-name">Crash</div>
+        </div>
+        <div class="game-card">
+          <div class="game-players">🟢 65 играют</div>
+          <div class="game-emoji">🚀🐄</div>
+          <div class="game-name">Rocket</div>
+        </div>
+        <div class="game-card">
+          <div class="game-players">🟢 25 играют</div>
+          <div class="game-emoji">🎃</div>
+          <div class="game-name">Halloween</div>
+        </div>
+        <div class="game-card">
+          <div class="game-players">🟢 89 играют</div>
+          <div class="game-emoji">⚔️</div>
+          <div class="game-name">Battle</div>
+        </div>
+        <div class="game-card">
+          <div class="game-players">🟢 26 играют</div>
+          <div class="game-emoji">✈️</div>
+          <div class="game-name">Aviator</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CASES ==================== -->
+    <section class="tab-content" id="tab-cases">
+      <div class="section-title">Кейсы</div>
+      <div class="cases-list">
+        <div class="case-card">
+          <div class="case-emoji">🎁</div>
+          <div class="case-info">
+            <div class="case-name">Стартовый кейс</div>
+            <div class="case-price">Бесплатно</div>
+          </div>
+          <button class="btn-small">Открыть</button>
+        </div>
+        <div class="case-card">
+          <div class="case-emoji">💎</div>
+          <div class="case-info">
+            <div class="case-name">Премиум кейс</div>
+            <div class="case-price">500 ₽</div>
+          </div>
+          <button class="btn-small">Открыть</button>
+        </div>
+        <div class="case-card">
+          <div class="case-emoji">🔥</div>
+          <div class="case-info">
+            <div class="case-name">Огненный кейс</div>
+            <div class="case-price">1 200 ₽</div>
+          </div>
+          <button class="btn-small">Открыть</button>
+        </div>
+        <div class="case-card">
+          <div class="case-emoji">👑</div>
+          <div class="case-info">
+            <div class="case-name">VIP кейс</div>
+            <div class="case-price">3 000 ₽</div>
+          </div>
+          <button class="btn-small">Открыть</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EARN ==================== -->
+    <section class="tab-content" id="tab-earn">
+      <div class="section-title">Заработок</div>
+      <div class="earn-list">
+        <div class="earn-card">
+          <div class="earn-left">
+            <div class="earn-icon">🎯</div>
+            <div>
+              <div class="earn-name">Пригласи друга</div>
+              <div class="earn-desc">+1 500 ₽ за каждого</div>
+            </div>
+          </div>
+          <button class="btn-small">Пригласить</button>
+        </div>
+        <div class="earn-card">
+          <div class="earn-left">
+            <div class="earn-icon">📱</div>
+            <div>
+              <div class="earn-name">Подпишись на канал</div>
+              <div class="earn-desc">до 300 ₽</div>
+            </div>
+          </div>
+          <button class="btn-small">Выполнить</button>
+        </div>
+        <div class="earn-card">
+          <div class="earn-left">
+            <div class="earn-icon">💬</div>
+            <div>
+              <div class="earn-name">Напиши комментарий</div>
+              <div class="earn-desc">до 255 ₽ в день</div>
+            </div>
+          </div>
+          <button class="btn-small">Выполнить</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BONUS ==================== -->
+    <section class="tab-content" id="tab-bonus">
+      <div class="section-title">Бонусы и розыгрыши</div>
+      <div class="bonus-banner">
+        <div class="bonus-title">Розыгрыш 500 NFT</div>
+        <div class="bonus-prize">Призы на 1 900 000 ₽</div>
+        <button class="btn-primary">Открыть →</button>
+      </div>
+      <div class="bonus-list">
+        <div class="bonus-card">
+          <div class="bonus-name">Каждую неделю</div>
+          <div class="bonus-item">Resistance Dog</div>
+          <div class="bonus-price">75 000 ₽</div>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-name">Каждый день</div>
+          <div class="bonus-item">Eternal Rose</div>
+          <div class="bonus-price">5 000 ₽</div>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-name">Каждый час</div>
+          <div class="bonus-item">Алмаз</div>
+          <div class="bonus-price">110 ₽</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIP ==================== -->
+    <section class="tab-content" id="tab-vip">
+      <div class="vip-card">
+        <div class="vip-level">VIP-СТАТУС · УРОВЕНЬ 1 ИЗ 8</div>
+        <div class="vip-name">Новичок</div>
+        <div class="vip-progress">
+          <div class="vip-bar"><div class="vip-fill" style="width: 5%"></div></div>
+          <div class="vip-progress-text">0 ₽ / 100 000 ₽ до Iron</div>
+        </div>
+        <div class="vip-benefits">
+          <div class="benefit">Рейкбек 0,15%</div>
+          <div class="benefit">Кэшбек 5%</div>
+        </div>
+      </div>
+      <div class="section-title">Бонусы VIP</div>
+      <div class="vip-bonuses">
+        <div class="vip-bonus-item">Рейкбек 0,15%</div>
+        <div class="vip-bonus-item">Стейкинг 2,5%</div>
+        <div class="vip-bonus-item">Друзья 10%</div>
+        <div class="vip-bonus-item">Кэшбек 5%</div>
+      </div>
+    </section>
+
+    <!-- Stake Modal -->
+    <div class="modal" id="stakeModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Застейкать подарки</h3>
+          <button class="close-btn" data-close>&times;</button>
+        </div>
+        <input type="number" id="stakeAmount" placeholder="Количество" min="1" />
+        <div class="quick-row">
+          <button class="quick" data-amount="10">10</button>
+          <button class="quick" data-amount="50">50</button>
+          <button class="quick" data-amount="100">100</button>
+          <button class="quick" data-amount="all">Всё</button>
+        </div>
+        <button class="btn-primary full" id="confirmStake">Подтвердить</button>
+      </div>
+    </div>
+
+    <!-- Unstake Modal -->
+    <div class="modal" id="unstakeModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Забрать из стейкинга</h3>
+          <button class="close-btn" data-close>&times;</button>
+        </div>
+        <input type="number" id="unstakeAmount" placeholder="Количество" min="1" />
+        <div class="quick-row">
+          <button class="quick" data-amount="10">10</button>
+          <button class="quick" data-amount="50">50</button>
+          <button class="quick" data-amount="100">100</button>
+          <button class="quick" data-amount="all">Всё</button>
+        </div>
+        <button class="btn-primary full" id="confirmUnstake">Забрать</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
